@@ -124,7 +124,7 @@ form {
                 content: "";
                 position: absolute;
                 inset: 0px;
-                background: var(--gradient-background);
+                background: var(--gradient-border);
                 z-index: -1;
                 border-radius: .5rem;
             }
@@ -135,7 +135,7 @@ form {
             }
 
             &:hover > img {
-                animation: submitAnimation 4s infinite;
+                animation: submitAnimation 2s infinite;
             }
         }
     }
