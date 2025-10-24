@@ -37,17 +37,27 @@
             <h2>Quero sortear:</h2>
             <p>defina o intervalo e a quantidade de números, clique em "Sortear" e veja os resultados na tela. É rápido e fácil!</p>
             <form>
-                <div class="input-customizator">
-                    <label for="numbers">Números</label>
-                    <input type="number" id="numbers">
+                <div class="inputs-wrapper">
+                    <div class="input-customizator">
+                        <label for="numbers">Números</label>
+                        <input type="number" id="numbers">
+                    </div>
+                    <div class="input-customizator">
+                        <label for="from">De</label>
+                        <input type="number" id="from">
+                    </div>
+                    <div class="input-customizator">
+                        <label for="to">Até</label>
+                        <input type="number" id="to">
+                    </div>
                 </div>
-                <div class="input-customizator">
-                    <label for="from">De</label>
-                    <input type="number" id="from">
+                <div class="checkbox-wrapper">
+                    <input type="checkbox" id="repeat">
+                    <span class="slider"></span>
+                    <label for="repeat">Não repetir número</label>
                 </div>
-                <div class="input-customizator">
-                    <label for="to">Até</label>
-                    <input type="number" id="to">
+                <div class="submit-wrapper">
+                    <button>Sortear <img src="./assets/images/icons/submit.svg" alt="Imagem ilustrativa de enviar"></button>
                 </div>
             </form>
         </div>

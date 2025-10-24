@@ -16,8 +16,12 @@
 }
 
 form {
-    display: flex;
-    gap: .75rem;
+    
+
+    & .inputs-wrapper {
+        display: flex;
+        gap: .75rem;
+    }
 
     & .input-customizator {
         display: flex;
@@ -40,5 +44,123 @@ form {
             padding: 4px 8px;
             text-align: center;
         }
+    }
+
+    & .checkbox-wrapper {
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        height: 1.25rem;
+        margin-top: 1.75rem;
+
+        & label {
+            margin-left: 2.375rem;
+        }
+
+        & input {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 1.875rem;
+            height: 1.875rem;
+            opacity: 0;
+            z-index: 2;
+        }
+
+        & .slider {
+            position: absolute;
+            cursor: pointer;
+            max-width: 1.875rem;
+            inset: 0;
+            background: var(--content-tertiary);
+            -webkit-transition: 0.4s;
+            transition: 0.4s;
+            border-radius: 1rem;
+        }
+
+        & .slider::before {
+            position: absolute;
+            content:  "";
+            height: .875rem;
+            width: .875rem;
+            left: 3px;
+            bottom: 3px;
+            -webkit-transition: 0.4s;
+            transition: 0.4s;
+            background-color: var(--content-primary);
+            border-radius: 50%;
+        }
+        
+        & input:checked + .slider {
+            background: var(--gradient-background);
+        }
+
+        & input:checked + .slider::before {
+            transform: translateX(11px);
+        }
+    }
+
+    & .submit-wrapper {
+        margin-top: 3.5rem;
+        max-width: 482px;
+        
+        & button {
+            display: inline-flex;
+            gap: .5rem;
+            width: 100%;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            background-color: var(--background-tertiary);
+            color: var(--content-primary);
+            font: var(--label-small);
+            text-transform: uppercase;
+            border: none;
+            border-radius: .5rem;
+            position: relative;
+            cursor: pointer;
+
+            &::before {
+                content: "";
+                position: absolute;
+                inset: 0px;
+                background: var(--gradient-background);
+                z-index: -1;
+                border-radius: .5rem;
+            }
+
+            &:hover::before {
+                inset: -1px;
+                animation: gradient 8s ease infinite;
+            }
+
+            &:hover > img {
+                animation: submitAnimation 4s infinite;
+            }
+        }
+    }
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%; /* Posição inicial do gradiente */
+    }
+    50% {
+        background-position: 100% 50%; /* Posição intermediária do gradiente */
+    }
+    100% {
+        background-position: 0% 50%; /* Posição final do gradiente */
+    }
+}
+
+@keyframes submitAnimation{
+    0% {
+        transform: translateX(0px);
+    }
+    50% {
+        transform: translateX(1.25rem)
+    }
+    100% {
+        transform: translateX(0);
     }
 }
