@@ -1,0 +1,44 @@
+.content-form {
+    grid-area: form;
+
+    & h2 {
+        font: var(--label-medium);
+        text-transform: uppercase;
+        color: var(--content-primary);
+        margin-bottom: .125rem;
+    }
+
+    & p {
+        font: var(--paragraph-large);
+        color: var(--content-secondary);
+        margin-bottom: 2.5rem;
+    }
+}
+
+form {
+    display: flex;
+    gap: .75rem;
+
+    & .input-customizator {
+        display: flex;
+        flex-direction: column;
+        gap: .5rem;
+
+        & label {
+            font: var(--label-small);
+            color: var(--content-secondary);
+            text-transform: uppercase;
+        }
+
+        & input {
+            border-radius: 8px;
+            border: 1px solid var(--background-secondary);
+            background-color: var(--background-secondary);
+            font: var(--display-small);
+            color: var(--content-primary);
+            max-width: 6rem;
+            padding: 4px 8px;
+            text-align: center;
+        }
+    }
+}
