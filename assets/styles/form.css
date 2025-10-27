@@ -162,6 +162,7 @@ form {
             border-radius: .5rem;
             position: relative;
             cursor: pointer;
+            transition: background-color 1s ease;
 
             &::before {
                 content: "";
@@ -169,30 +170,22 @@ form {
                 inset: 0px;
                 background: var(--gradient-border);
                 z-index: -1;
-                border-radius: .5rem;
+                border-radius: .57rem;
+                transition: inset .3s ease;
+            }
+
+            &:hover {
+                background-color: var(--background-secondary);
             }
 
             &:hover::before {
                 inset: -1px;
-                animation: gradient 8s ease infinite;
             }
 
             &:hover > img {
                 animation: submitAnimation 2s infinite;
             }
         }
-    }
-}
-
-@keyframes gradient {
-    0% {
-        background-position: 0% 50%; /* Posição inicial do gradiente */
-    }
-    50% {
-        background-position: 100% 50%; /* Posição intermediária do gradiente */
-    }
-    100% {
-        background-position: 0% 50%; /* Posição final do gradiente */
     }
 }
 

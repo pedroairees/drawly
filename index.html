@@ -41,19 +41,19 @@
                     <div class="input-customizator">
                         <label for="numbers">Números</label>
                         <div class="border-customizate">
-                            <input type="number" id="numbers" max="2">
+                            <input type="number" id="numbers" max="2" required>
                         </div>
                     </div>
                     <div class="input-customizator">
                         <label for="from">De</label>
                         <div class="border-customizate">
-                            <input type="number" id="from" min="0">
+                            <input type="number" id="from" min="0" max="100" required>
                         </div>
                     </div>
                     <div class="input-customizator">
                         <label for="to">Até</label>
                         <div class="border-customizate">
-                            <input type="number" id="to" min="0" max="100">
+                            <input type="number" id="to" min="0" max="100" required>
                         </div>
                     </div>
                 </div>
@@ -63,11 +63,12 @@
                     <label for="repeat">Não repetir número</label>
                 </div>
                 <div class="submit-wrapper">
-                    <button>Sortear <img src="./assets/images/icons/submit.svg" alt="Imagem ilustrativa de enviar"></button>
+                    <button id="submit-btn">Sortear <img src="./assets/images/icons/submit.svg" alt="Imagem ilustrativa de enviar"></button>
                 </div>
             </form>
         </div>
-
     </main>
+
+    <script src="./scripts.js"></script>
 </body>
 </html>
