@@ -122,9 +122,7 @@ main {
             "form"
             "questions"
         ;
-        
-        justify-content: center;
-        align-content: center;
+        place-items: center;
     }
 
     .m-mobile {
