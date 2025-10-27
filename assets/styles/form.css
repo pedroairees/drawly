@@ -46,7 +46,46 @@ form {
             width: 5.375rem;
             height: 3.5rem;
             padding: 4px 8px;
+            margin: 2px;
             text-align: center;
+            transition: background-color .5s ease;
+
+            &:hover {
+                background-color: var(--background-tertiary);
+            }
+            &:focus {
+                outline: none;
+                background-color: var(--background-tertiary);
+            }
+        }
+
+        & .border-customizate {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            &::after {
+                content: "";
+                position: absolute;
+                width: 90%;
+                height: 90%;
+                background-image: var(--gradient-border);
+                border-radius: 8px;
+                z-index: -1;
+                transition: width .3s ease, height .3s ease;
+            }
+            &:hover {
+                &::after {
+                    height: 101%;
+                    width: 101%;
+                }
+            }
+            &:has(input:focus) {
+                &::after {
+                    height: 102%;
+                    width: 102%;
+                }
+            }
         }
     }
 
