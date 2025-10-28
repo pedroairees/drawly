@@ -34,9 +34,9 @@
         </div>
 
         <div class="content-form">
-            <h2 class="">Quero sortear:</h2>
-            <p class="">defina o intervalo e a quantidade de números, clique em "Sortear" e veja os resultados na tela. É rápido e fácil!</p>
-            <form class="">
+            <h2>Quero sortear:</h2>
+            <p>defina o intervalo e a quantidade de números, clique em "Sortear" e veja os resultados na tela. É rápido e fácil!</p>
+            <form id="drawly-form">
                 <div class="inputs-wrapper">
                     <div class="input-customizator">
                         <label for="numbers">Números</label>
@@ -67,16 +67,18 @@
                 <h3>Resultado do sorteio</h3>
                 <p>1º resultado</p>
                 <div class="wrapper-response">
+                    <!--
                     <div class="response">
                         <p>23</p>
                     </div>
                     <div class="response">
                         <p>23</p>
                     </div>
+                    -->
                 </div>
             </div>
             <div class="submit-wrapper">
-                <button id="submit-btn">Sortear <img src="./assets/images/icons/submit.svg" alt="Imagem ilustrativa de enviar"></button>
+                <button id="submit-btn" form="drawly-form">Sortear <img src="./assets/images/icons/submit.svg" alt="Imagem ilustrativa de enviar"></button>
             </div>
         </div>
     </main>

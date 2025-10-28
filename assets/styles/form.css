@@ -165,6 +165,10 @@ form {
         cursor: pointer;
         transition: background-color 1s ease;
 
+        &.hide {
+            display: none;
+        }
+
         &::before {
             content: "";
             position: absolute;
