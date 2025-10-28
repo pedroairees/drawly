@@ -142,49 +142,49 @@ form {
             transform: translateX(11px);
         }
     }
+}
 
-    & .submit-wrapper {
-        margin-top: 3.5rem;
-        max-width: 482px;
+.submit-wrapper {
+    margin-top: 3.5rem;
+    max-width: 482px;
         
-        & button {
-            display: inline-flex;
-            gap: .5rem;
-            width: 100%;
-            align-items: center;
-            justify-content: center;
-            padding: 1rem;
-            background-color: var(--background-tertiary);
-            color: var(--content-primary);
-            font: var(--label-small);
-            text-transform: uppercase;
-            border: none;
-            border-radius: .5rem;
-            position: relative;
-            cursor: pointer;
-            transition: background-color 1s ease;
+    & button {
+        display: inline-flex;
+        gap: .5rem;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        padding: 1rem;
+        background-color: var(--background-tertiary);
+        color: var(--content-primary);
+        font: var(--label-small);
+        text-transform: uppercase;
+        border: none;
+        border-radius: .5rem;
+        position: relative;
+        cursor: pointer;
+        transition: background-color 1s ease;
 
-            &::before {
-                content: "";
-                position: absolute;
-                inset: 0px;
-                background: var(--gradient-border);
-                z-index: -1;
-                border-radius: .57rem;
-                transition: inset .3s ease;
-            }
+        &::before {
+            content: "";
+            position: absolute;
+            inset: 0px;
+            background: var(--gradient-border);
+            z-index: -1;
+            border-radius: .57rem;
+            transition: inset .3s ease;
+        }
 
-            &:hover {
-                background-color: var(--background-secondary);
-            }
+        &:hover {
+            background-color: var(--background-secondary);
+        }
 
-            &:hover::before {
-                inset: -1px;
-            }
+        &:hover::before {
+            inset: -1px;
+        }
 
-            &:hover > img {
-                animation: submitAnimation 2s infinite;
-            }
+        &:hover > img {
+            animation: submitAnimation 2s infinite;
         }
     }
 }
