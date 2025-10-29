@@ -19,17 +19,24 @@ function gerarNumero(min, max) {
 }
 
 function addResult(result) {
-    const wrapperContent = document.createElement('div')
-    wrapperContent.classList.add('response', 'anime-result')
+    return new Promise((resolve) => {
+        const wrapperContent = document.createElement('div')
+        wrapperContent.classList.add('response', 'anime-result')
 
-    const responsedP = document.createElement('p')
-    responsedP.classList.add('anime-text')
-    responsedP.textContent = result
-    wrapperContent.prepend(responsedP)
+        const responsedP = document.createElement('p')
+        responsedP.classList.add('anime-text')
+        responsedP.textContent = result
+        wrapperContent.prepend(responsedP)
 
-    wrapperResponse.prepend(wrapperContent)
-    hideForm()
+        wrapperContent.addEventListener('animationend', () => {
+            resolve();
+        }, { once: true });
+
+        wrapperResponse.prepend(wrapperContent)
+
+        hideForm()
     wrapperResult.classList.remove('hide')
+    })
 }
 
 function hideForm() {
@@ -55,7 +62,7 @@ function toggleBtn() {
     btnAgain.classList.remove('hide')
 }
 
-form.addEventListener('submit', (event) => {
+form.addEventListener('submit', async (event) => {
     event.preventDefault()
 
     const amountNumbers = inputAmountNumbers.valueAsNumber
@@ -77,12 +84,17 @@ form.addEventListener('submit', (event) => {
 
     wrapperResponse.innerHTML = ''
 
+    const numbersToDraw = []
     for(let i = 0; i < amountNumbers; i++) {
-        let numberGenerate = gerarNumero(from, to)
-        addResult(numberGenerate)
-        toggleBtn()
-        formClear()
+        numbersToDraw.push(gerarNumero(from, to))
     }
+
+    for(const number of numbersToDraw) {
+        await addResult(number)
+    }
+
+    toggleBtn()
+    formClear()
 })
 
 btnAgain.addEventListener('click', (event) => {
