@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Drawly</title>
     <link rel="stylesheet" href="./assets/styles/index.css">
+    <link rel="shortcut icon" href="./assets/images/logo.svg">
 
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Sora:wght@100..800&display=swap" rel="stylesheet">
 </head>
@@ -41,7 +42,7 @@
                     <div class="input-customizator">
                         <label for="numbers">Números</label>
                         <div class="border-customizate">
-                            <input type="number" id="numbers" max="2" required>
+                            <input type="number" id="numbers" min="1" max="5" required>
                         </div>
                     </div>
                     <div class="input-customizator">
@@ -66,7 +67,7 @@
             <div class="show-result hide">
                 <h3>Resultado do sorteio</h3>
                 <p>1º resultado</p>
-                <div class="wrapper-response">
+                <div class="wrapper-response" aria-live="polite">
                     <!--
                     <div class="response">
                         <p>23</p>
