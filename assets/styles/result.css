@@ -21,15 +21,65 @@
 
     & .response {
         padding: 1.125rem 1.375rem;
+        background-color: blueviolet;
+        height: 6.25rem;
+        width: 6.25rem;
+        text-align: center;
+        border-radius: 1.75rem;
 
         & p {
-            color: var(--content-brand);
+            color: var(--color-inverse);
             font: var(--overline);
             font-size: 3rem;
+            margin: 0;
         }
     }
 }
 
 .hide {
     display: none;
+}
+
+.anime-result {
+    animation: resultSpin 1s ease-out forwards;
+}
+
+.anime-text {
+    animation: resultText 1s ease-out forwards;
+}
+
+@keyframes resultSpin {
+    0% {
+        transform: scale(1.2);
+    }
+    25% {
+        transform: rotate(30deg);
+    }
+    50% {
+        transform: rotate(60deg);
+        transform: scale(1);
+    }
+    65% {
+        transform: rotate(70deg);
+    }
+    100% {
+        transform: rotate(360deg);
+        background-color: var(--background-primary);
+    }
+}
+
+@keyframes resultText {
+    0% {
+        opacity: 0;
+        transform: scale(1.2);
+    }
+    25% {
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1);
+    }
+    100% { 
+        color: var(--content-brand);
+    }
 }

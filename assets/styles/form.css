@@ -43,7 +43,7 @@ form {
             background-color: var(--background-secondary);
             font: var(--display-small);
             color: var(--content-primary);
-            width: 5.375rem;
+            width: 6rem;
             height: 3.5rem;
             padding: 4px 8px;
             margin: 2px;
@@ -190,6 +190,23 @@ form {
         &:hover > img {
             animation: submitAnimation 2s infinite;
         }
+    }
+}
+
+.draw-again {
+    width: 100%;
+
+    & button {
+        width: 100%;
+        font: var(--label-small);
+        text-transform: uppercase;
+        text-align: center;
+        color: var(--content-tertiary);
+        background-color: var(--background-tertiary);
+        border-radius: 8px;
+        padding: 1rem;
+        outline: none;
+        border: none;
     }
 }
 

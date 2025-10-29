@@ -3,6 +3,7 @@ const inputFrom = document.getElementById('from')
 const inputTo = document.getElementById('to')
 
 const btnSubmit = document.getElementById('submit-btn')
+const btnAgain = document.querySelector('.draw-again')
 
 const form = document.querySelector('form')
 const wrapperResult = document.querySelector('.show-result')
@@ -19,9 +20,10 @@ function gerarNumero(min, max) {
 
 function addResult(result) {
     const wrapperContent = document.createElement('div')
-    wrapperContent.classList.add('response')
+    wrapperContent.classList.add('response', 'anime-result')
 
     const responsedP = document.createElement('p')
+    responsedP.classList.add('anime-text')
     responsedP.textContent = result
     wrapperContent.prepend(responsedP)
 
@@ -34,6 +36,23 @@ function hideForm() {
     form.classList.add('hide')
     h2Form.classList.add('hide')
     pForm.classList.add('hide')
+}
+
+function showFrom() {
+    form.classList.remove('hide')
+    h2Form.classList.remove('hide')
+    pForm.classList.remove('hide')
+}
+
+function formClear() {
+    inputAmountNumbers.value = ''
+    inputFrom.value = ''
+    inputTo.value = ''
+}
+
+function toggleBtn() {
+    btnSubmit.classList.add('hide')
+    btnAgain.classList.remove('hide')
 }
 
 form.addEventListener('submit', (event) => {
@@ -56,8 +75,19 @@ form.addEventListener('submit', (event) => {
         return
     }
 
-    let numberGenerate = gerarNumero(from, to)
-    addResult(numberGenerate)
-    btnSubmit.classList.add('hide')
+    wrapperResponse.innerHTML = ''
+
+    for(let i = 0; i < amountNumbers; i++) {
+        let numberGenerate = gerarNumero(from, to)
+        addResult(numberGenerate)
+        toggleBtn()
+        formClear()
+    }
 })
 
+btnAgain.addEventListener('click', (event) => {
+    wrapperResult.classList.add('hide')
+    showFrom()
+    btnAgain.classList.add('hide')
+    btnSubmit.classList.remove('hide')
+})
